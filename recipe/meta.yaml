@@ -6,24 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-dsc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-dsc-{{ version }}.tar.gz
   sha256: c057d0f310823cf512f8ea46c4a938a21f2522ad1d28eccb54e1c56e164cd4a9
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
-    - python >=3.6
+    - python >={{ python_min }}
     - quantiphyse-fabber
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - quantiphyse_dsc
 
