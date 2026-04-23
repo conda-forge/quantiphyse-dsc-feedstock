@@ -1,5 +1,5 @@
 {% set name = "quantiphyse-dsc" %}
-{% set version = "0.9.2" %}
+{% set version = "0.9.2.post4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quantiphyse-dsc-{{ version }}.tar.gz
-  sha256: c057d0f310823cf512f8ea46c4a938a21f2522ad1d28eccb54e1c56e164cd4a9
+  sha256: ebd82b720dbd9301b14639ecef53824d417fb71b8aeade6396dc12c5be646da9
 
 build:
   number: 0
